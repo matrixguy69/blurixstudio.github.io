@@ -1,244 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obsidian Studio | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blurix Studio – Minecraft & Discord Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+    body { background: #0f0f1a; color: #fff; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; }
+    
+    /* Header */
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: rgba(15,15,26,0.9); position: sticky; top: 0; z-index: 1000; }
+    header .logo { font-size: 1.8rem; font-weight: 800; color: #00ffea; }
+    header nav a { margin-left: 25px; font-weight: 600; transition: 0.3s; }
+    header nav a:hover { color: #00ffea; }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0c0c0c;
-            color: #fff;
-        }
+    /* Hero Section */
+    .hero { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; background: linear-gradient(135deg, #0f0f1a, #1c1c2e); animation: fadeIn 1.5s ease forwards; }
+    .hero h1 { font-size: 3rem; color: #00ffea; margin-bottom: 15px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #aaa; }
+    .hero button { background: #00ffea; border: none; padding: 15px 30px; border-radius: 8px; font-weight: 600; color: #0f0f1a; transition: 0.3s; }
+    .hero button:hover { background: #00cfcf; }
 
-        /* HERO SECTION */
-        .hero {
-            height: 100vh;
-            background: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
+    /* Sections */
+    section { padding: 80px 50px; }
+    .section-title { text-align: center; font-size: 2rem; margin-bottom: 50px; color: #00ffea; }
 
-        .hero h1 {
-            font-size: 4rem;
-            margin: 0;
-            text-shadow: 0 0 20px #000;
-        }
+    /* Services */
+    .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+    .service-card { background: rgba(15,15,26,0.8); padding: 30px; border-radius: 12px; width: 250px; text-align: center; transition: 0.3s; }
+    .service-card:hover { transform: translateY(-10px); box-shadow: 0 0 30px #00ffea; }
+    .service-card h3 { margin-bottom: 15px; color: #00ffea; }
+    .service-card p { color: #ccc; font-size: 0.95rem; margin-bottom: 20px; }
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-top: 10px;
-            opacity: 0.8;
-        }
+    /* Contact */
+    .contact { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .contact a { background: #00ffea; padding: 15px 25px; border-radius: 8px; font-weight: 600; color: #0f0f1a; transition: 0.3s; }
+    .contact a:hover { background: #00cfcf; }
 
-        .btn {
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #ff4b4b;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #0a0a14; color: #888; }
 
-        .btn:hover {
-            background: #ff2a2a;
-        }
+    /* Animations */
+    @keyframes fadeIn { 0% { opacity: 0; transform: translateY(50px); } 100% { opacity: 1; transform: translateY(0); } }
 
-        /* SECTION */
-        section {
-            padding: 80px 10%;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* SERVICES */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .service-box {
-            background: #151515;
-            padding: 25px;
-            border-radius: 10px;
-            transition: 0.3s;
-            border: 1px solid #222;
-        }
-
-        .service-box:hover {
-            transform: translateY(-5px);
-            border-color: #ff4b4b;
-        }
-
-        /* PORTFOLIO */
-        .portfolio {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .portfolio img {
-            width: 100%;
-            border-radius: 10px;
-            border: 2px solid #222;
-            transition: 0.3s;
-        }
-
-        .portfolio img:hover {
-            transform: scale(1.03);
-            border-color: #ff4b4b;
-        }
-
-        /* PRICING */
-        .pricing {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-        }
-
-        .price-box {
-            flex: 1;
-            min-width: 250px;
-            background: #151515;
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #222;
-            transition: 0.3s;
-        }
-
-        .price-box:hover {
-            transform: translateY(-5px);
-            border-color: #ff4b4b;
-        }
-
-        .price-title {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #ff4b4b;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #0a0a0a;
-            padding: 30px;
-            text-align: center;
-            opacity: 0.7;
-            margin-top: 40px;
-        }
-    </style>
+    /* Responsive */
+    @media(max-width: 768px) { 
+      .services { flex-direction: column; align-items: center; }
+      header { flex-direction: column; gap: 15px; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- HERO -->
-    <div class="hero">
-        <h1>Obsidian Studio</h1>
-        <p>Premium Minecraft Builds • Discord Servers • Thumbnails • Graphics</p>
-        <a href="#contact" class="btn">Contact Me</a>
+  <!-- Header -->
+  <header>
+    <div class="logo">Blurix Studio</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Premium Minecraft & Discord Services</h1>
+    <p>We deliver professional Minecraft servers, mods, builds, and Discord server setups.</p>
+    <button onclick="window.location.href='#contact'">Hire Us Now</button>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Minecraft Server Setup</h3>
+        <p>Custom server installation, plugins, mods, and world setup.</p>
+      </div>
+      <div class="service-card">
+        <h3>Minecraft Builds</h3>
+        <p>Professional in-game builds, worlds, and designs for your server.</p>
+      </div>
+      <div class="service-card">
+        <h3>Discord Server Setup</h3>
+        <p>Custom bots, moderation, channels, roles, and layouts.</p>
+      </div>
+      <div class="service-card">
+        <h3>Support & Consultation</h3>
+        <p>Advice on server optimization, plugins, and community management.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section id="services">
-        <h2>SERVICES</h2>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact">
+      <p>Join our Discord to order or ask questions:</p>
+      <a href="https://discord.gg/YOURDISCORD" target="_blank">Join Discord</a>
+    </div>
+  </section>
 
-        <div class="services">
-            <div class="service-box">
-                <h3>Minecraft Builds</h3>
-                <p>Custom bases, spawns, PVP arenas, farms, SMP setups.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Discord Servers</h3>
-                <p>Professional setups, bots, permissions, branding.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Thumbnails</h3>
-                <p>High-quality gaming thumbnails with clean graphics.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Branding</h3>
-                <p>Logos, banners, icons, and visual identity packs.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-        <h2>PORTFOLIO</h2>
-
-        <div class="portfolio">
-            <img src="https://i.ibb.co/1zDwLbs/mc1.jpg">
-            <img src="https://i.ibb.co/7VkWbSw/mc2.jpg">
-            <img src="https://i.ibb.co/vB4cgC5/mc3.jpg">
-            <img src="https://i.ibb.co/ZTwz8hf/dc1.jpg">
-            <img src="https://i.ibb.co/tMDFsNd/dc2.jpg">
-            <img src="https://i.ibb.co/26tD5p5/thumb1.jpg">
-        </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing">
-        <h2>PRICING</h2>
-
-        <div class="pricing">
-            <div class="price-box">
-                <div class="price-title">Discord Basic</div>
-                <div class="price">FREE</div>
-                <p>Simple server • 5 channels • basic perms</p>
-            </div>
-
-            <div class="price-box">
-                <div class="price-title">Minecraft Setup</div>
-                <div class="price">$5</div>
-                <p>Basic world • small builds • config help</p>
-            </div>
-
-            <div class="price-box">
-                <div class="price-title">Thumbnail Pack</div>
-                <div class="price">$5</div>
-                <p>3 custom thumbnails • clean & modern</p>
-            </div>
-
-            <div class="price-box">
-                <div class="price-title">Premium Server</div>
-                <div class="price">$10</div>
-                <p>Full Discord • branding • bots • automations</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <h2>CONTACT</h2>
-        <p>Discord: <strong>YourName#0000</strong></p>
-        <p>Or click the button below:</p>
-        <a class="btn" href="https://discord.com/users/your_id">Contact on Discord</a>
-    </section>
-
-    <footer>
-        © 2025 Obsidian Studio — All Rights Reserved
-    </footer>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Blurix Studio. All rights reserved.
+  </footer>
 
 </body>
 </html>
