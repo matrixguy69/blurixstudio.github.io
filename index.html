@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blurix Studio — Minecraft & Discord Experts</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0d17;
+      --glass: rgba(255,255,255,0.08);
+      --accent: #00ffee;
+      --text-muted: #9aa0b3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    section {
+      padding: 120px 8%;
+    }
+
+    h1, h2 {
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .muted {
+      color: var(--text-muted);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      background: rgba(10,10,20,0.6);
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    header nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      color: white;
+      transition: 0.3s;
+    }
+
+    header nav a:hover {
+      color: var(--accent);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: radial-gradient(circle at top, #12204a, var(--bg));
+      overflow: hidden;
+    }
+
+    .orb {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--accent), transparent 70%);
+      opacity: 0.15;
+      filter: blur(60px);
+      animation: float 12s infinite alternate ease-in-out;
+    }
+
+    .orb.one { top: -150px; left: -150px; }
+    .orb.two { bottom: -150px; right: -150px; animation-delay: 3s; }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-60px); }
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      max-width: 900px;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+
+    .hero button {
+      margin-top: 40px;
+      padding: 18px 36px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 40px var(--accent);
+    }
+
+    /* ===== STATS ===== */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+
+    .stat h2 {
+      font-size: 3rem;
+      color: var(--accent);
+    }
+
+    /* ===== GLASS CARDS ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--glass);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 35px;
+      transition: 0.4s;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 0 40px rgba(0,255,238,0.25);
+    }
+
+    /* ===== PRICING ===== */
+    .price {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin: 20px 0;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      background: linear-gradient(135deg, #00ffee, #3b82f6);
+      color: #000;
+      text-align: center;
+      border-radius: 30px;
+    }
+
+    .cta button {
+      background: #000;
+      color: white;
+      margin-top: 30px;
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: 0.9s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Blurix Studio</div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+
+  <div>
+    <h1>High-End Minecraft & Discord Services</h1>
+    <p class="muted">Servers. Builds. Mods. Communities — done properly.</p>
+    <button onclick="location.href='#contact'">Work With Us</button>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="stats">
+    <div class="stat"><h2>50+</h2><p class="muted">Projects</p></div>
+    <div class="stat"><h2>30+</h2><p class="muted">Clients</p></div>
+    <div class="stat"><h2>99%</h2><p class="muted">Satisfaction</p></div>
+  </div>
+</section>
+
+<section id="services" class="reveal">
+  <h2>What We Do</h2>
+  <p class="muted">Professional services for serious communities.</p>
+
+  <div class="grid" style="margin-top:40px;">
+    <div class="card">Minecraft Server Setup</div>
+    <div class="card">Custom Minecraft Builds</div>
+    <div class="card">Discord Server Systems</div>
+    <div class="card">Optimization & Consulting</div>
+  </div>
+</section>
+
+<section id="pricing" class="reveal">
+  <h2>Pricing</h2>
+
+  <div class="grid" style="margin-top:40px;">
+    <div class="card">
+      <h3>Starter</h3>
+      <div class="price">$25</div>
+      <p class="muted">Basic setup, fast delivery.</p>
+    </div>
+
+    <div class="card">
+      <h3>Pro</h3>
+      <div class="price">$60</div>
+      <p class="muted">Full server + Discord.</p>
+    </div>
+
+    <div class="card">
+      <h3>Elite</h3>
+      <div class="price">$120</div>
+      <p class="muted">Custom builds + priority.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta reveal">
+  <h2>Ready to Build Something Serious?</h2>
+  <p>Join our Discord and get started.</p>
+  <button onclick="window.open('https://discord.gg/YOURDISCORD')">Join Discord</button>
+</section>
+
+<footer>
+  © 2025 Blurix Studio — All Rights Reserved
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  window.addEventListener('scroll', () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
