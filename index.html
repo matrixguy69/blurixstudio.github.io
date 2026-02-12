@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blurix Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PREMIUM FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services">Services</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="logo">Blurix</div>
+  <nav class="desktop-nav">
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button id="themeToggle">☀</button>
+    <button id="menuToggle">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="particles"></canvas>
+  <div class="hero-content reveal">
+    <h1>
+      Premium<br>
+      <span>Minecraft & Discord</span><br>
+      Studio
+    </h1>
+    <p>High-end servers, builds, automation & communities.</p>
+    <a href="#pricing" class="cta">View Pricing</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat reveal"><h2 data-count="120">0</h2><p>Projects</p></div>
+  <div class="stat reveal"><h2 data-count="45">0</h2><p>Servers</p></div>
+  <div class="stat reveal"><h2 data-count="99">0</h2><p>Satisfaction %</p></div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <h2 class="section-title reveal">What We Do</h2>
+  <div class="service-grid">
+    <div class="service-card reveal">Minecraft Server Setup</div>
+    <div class="service-card reveal">Custom Builds & Worlds</div>
+    <div class="service-card reveal">Discord Bots & Automation</div>
+    <div class="service-card reveal">Scaling & Consulting</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing">
+  <h2 class="section-title reveal">Pricing</h2>
+
+  <div class="billing-toggle reveal">
+    <span>Monthly</span>
+    <input type="checkbox" id="billingSwitch">
+    <span>Yearly</span>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <h3>Starter</h3>
+      <p class="price" data-month="15" data-year="150">$15</p>
+      <ul>
+        <li>Basic setup</li>
+        <li>Plugin config</li>
+        <li>Support</li>
+      </ul>
+      <button onclick="goDiscord()">Buy</button>
+    </div>
+
+    <div class="price-card featured reveal">
+      <h3>Pro</h3>
+      <p class="price" data-month="40" data-year="400">$40</p>
+      <ul>
+        <li>Advanced setup</li>
+        <li>Custom configs</li>
+        <li>Priority support</li>
+      </ul>
+      <button onclick="goDiscord()">Buy</button>
+    </div>
+
+    <div class="price-card reveal">
+      <h3>Elite</h3>
+      <p class="price" data-month="80" data-year="800">$80+</p>
+      <ul>
+        <li>Full custom build</li>
+        <li>Automation</li>
+        <li>Ongoing support</li>
+      </ul>
+      <button onclick="goDiscord()">Buy</button>
+    </div>
+  </div>
+
+  <div class="payments reveal">
+    <p>Payments accepted:</p>
+    <span>PayPal</span>
+    <span>Crypto</span>
+    <span>Stripe</span>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <h2 class="section-title reveal">FAQ</h2>
+
+  <div class="faq-item reveal">
+    <h4>How long does setup take?</h4>
+    <p>Most projects are delivered within 24–72 hours.</p>
+  </div>
+
+  <div class="faq-item reveal">
+    <h4>Do you offer support?</h4>
+    <p>Yes, all plans include support. Pro & Elite get priority.</p>
+  </div>
+
+  <div class="faq-item reveal">
+    <h4>How do I order?</h4>
+    <p>Click Buy and you’ll be redirected to our Discord.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <h2 class="section-title reveal">Clients Love Us</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial reveal">“Blurix built our server perfectly.”</div>
+    <div class="testimonial reveal">“Clean, fast, professional.”</div>
+    <div class="testimonial reveal">“Worth every dollar.”</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="final-cta reveal">
+  <h2>Ready to start?</h2>
+  <a href="https://discord.gg/YOURDISCORD" target="_blank">Join Discord</a>
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>
