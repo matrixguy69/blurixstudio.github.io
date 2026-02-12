@@ -40,7 +40,7 @@ document.querySelectorAll("[data-count]").forEach(el=>{
 // Pricing toggle monthly/yearly
 document.getElementById("billingSwitch").onchange=e=>{
   document.querySelectorAll(".price").forEach(p=>{
-    p.textContent="PKR"+(e.target.checked?p.dataset.year:p.dataset.month);
+    p.textContent="PKR "+(e.target.checked?p.dataset.year:p.dataset.month);
   });
 };
 
@@ -79,4 +79,5 @@ ps=Array.from({length:120},()=>({
   });
   requestAnimationFrame(anim);
 })();
+
 
