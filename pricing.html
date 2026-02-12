@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pricing | Blurix Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="side-menu" id="sideMenu">
+  <div class="side-logo">Blurix Studio</div>
+  <nav>
+    <a href="services.html">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html">FAQ</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="side-contact">
+    <button onclick="goDiscord()">Discord</button>
+    <button onclick="goWhatsApp()">WhatsApp</button>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="logo">Blurix Studio</div>
+  <nav class="desktop-nav">
+    <a href="services.html">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html">FAQ</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button id="themeToggle">☀</button>
+    <button id="menuToggle">☰</button>
+  </div>
+</header>
+
+<section class="pricing reveal">
+  <h2 class="section-title">Pricing Plans</h2>
+
+  <div class="billing-toggle reveal">
+    <span>Monthly</span>
+    <input type="checkbox" id="billingSwitch">
+    <span>Yearly</span>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <h3>Starter</h3>
+      <p class="price" data-month="100" data-year="1000">$100</p>
+      <ul>
+        <li>1 Platform Management</li>
+        <li>Basic Ads</li>
+        <li>Reporting</li>
+      </ul>
+      <button onclick="goDiscord()">Buy</button>
+    </div>
+
+    <div class="price-card featured reveal">
+      <h3>Pro</h3>
+      <p class="price" data-month="200" data-year="2000">$200</p>
+      <ul>
+        <li>3 Platform Management</li>
+        <li>Advanced Ads</li>
+        <li>SEO & Analytics</li>
+      </ul>
+      <button onclick="goDiscord()">Buy</button>
+    </div>
+
+    <div class="price-card reveal">
+      <h3>Elite</h3>
+      <p class="price" data-month="300" data-year="3000">$300+</p>
+      <ul>
+        <li>All Platforms</li>
+        <li>Full Ads & Marketing</li>
+        <li>Custom Consulting</li>
+      </ul>
+      <button onclick="goDiscord()">Buy</button>
+    </div>
+  </div>
+
+  <div class="payments reveal">
+    <p>Payments Accepted:</p>
+    <span>PayPal</span>
+    <span>Stripe</span>
+    <span>Crypto</span>
+  </div>
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>
