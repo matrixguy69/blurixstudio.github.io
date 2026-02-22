@@ -1,65 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>FAQ | Blurix Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>FAQ — Blurix Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="side-menu" id="sideMenu">
-  <div class="side-logo">Blurix Studio</div>
-  <nav>
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="side-contact">
-    <button onclick="goDiscord()">Discord</button>
-    <button onclick="goWhatsApp()">WhatsApp</button>
-  </div>
-</div>
-
+<!-- NAV -->
 <header class="nav">
-  <a href="index.html" class="logo">Blurix Studio</a> <!-- clickable logo -->
-  <nav class="desktop-nav">
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="nav-actions">
-    <button id="themeToggle">☀</button>
-    <button id="menuToggle">☰</button>
+  <div class="nav-inner">
+    <div class="logo">Blurix</div>
+    <nav>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html" class="active">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-cta" onclick="goWhatsApp()">Start Now</button>
   </div>
 </header>
 
-<section class="faq reveal">
-  <h2 class="section-title">Frequently Asked Questions</h2>
+<!-- FAQ HERO -->
+<section class="hero faq-hero">
+  <div class="hero-glow"></div>
 
-  <div class="faq-item reveal">
-    <h4>How long until I see results?</h4>
-    <p>Typically within 2–4 weeks depending on ad campaigns and engagement.</p>
+  <div class="hero-content">
+    <h1 class="split">
+      Questions?<br>
+      <span>We’ve Got Answers</span>
+    </h1>
+
+    <p class="hero-sub">
+      Everything you need to know before scaling with Blurix.
+      Clear, honest, and straight to the point.
+    </p>
   </div>
-  <div class="faq-item reveal">
-    <h4>Do you handle all platforms?</h4>
-    <p>Yes! Facebook, Instagram, TikTok, Google, YouTube & more.</p>
+</section>
+
+<!-- FAQ CONTENT -->
+<section class="section">
+  <div class="faq-wrap">
+
+    <div class="faq-item">
+      <button class="faq-q">
+        How long until I see results?
+        <span>+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Most clients begin seeing measurable traction within
+          <strong>2–4 weeks</strong>, depending on niche, ad spend,
+          and current brand presence.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">
+        Do you manage all platforms?
+        <span>+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Yes. We manage Facebook, Instagram, TikTok, Google,
+          YouTube, and more — strategy to execution.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">
+        Can I get a custom package?
+        <span>+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Absolutely. If none of our plans fit your goals,
+          we’ll build a custom growth plan around your brand.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">
+        How do we get started?
+        <span>+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Click <strong>Start Now</strong>, message us on WhatsApp,
+          and we onboard you immediately.
+        </p>
+      </div>
+    </div>
+
   </div>
-  <div class="faq-item reveal">
-    <h4>How do I get started?</h4>
-    <p>Click Buy via Discord or WhatsApp and our team will guide you.</p>
-  </div>
-  <div class="faq-item reveal">
-    <h4>Can I choose custom packages?</h4>
-    <p>Absolutely! Contact us and we’ll create a plan tailored to your needs.</p>
-  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <h2>Still Have Questions?</h2>
+  <p>Let’s talk and map your growth.</p>
+  <a class="cta primary" onclick="goWhatsApp()">Contact Us</a>
 </section>
 
 <script src="main.js"></script>
 </body>
 </html>
-
-
