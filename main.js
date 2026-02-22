@@ -21,31 +21,43 @@ const obs=new IntersectionObserver(entries=>{
 
 document.querySelectorAll(".hero").forEach(s=>obs.observe(s));
 
-/* PARTICLES */
-const c=document.getElementById("particles"),x=c.getContext("2d");
-let w,h;
-function r(){w=c.width=innerWidth;h=c.height=innerHeight}
-r();onresize=r;
-let p=[...Array(120)].map(()=>({
-  x:Math.random()*w,
-  y:Math.random()*h,
-  r:Math.random()*2+1,
-  vx:(Math.random()-.5)*.4,
-  vy:(Math.random()-.5)*.4
-}));
-(function a(){
-  x.clearRect(0,0,w,h);
-  x.fillStyle="rgba(127,92,255,.6)";
-  p.forEach(o=>{
-    o.x+=o.vx;o.y+=o.vy;
-    if(o.x<0||o.x>w)o.vx*=-1;
-    if(o.y<0||o.y>h)o.vy*=-1;
-    x.beginPath();
-    x.arc(o.x,o.y,o.r,0,Math.PI*2);
-    x.fill();
-  });
-  requestAnimationFrame(a);
-})();
+/* PARTICLES (SAFE) */
+const canvas = document.getElementById("particles");
+
+if (canvas) {
+  const ctx = canvas.getContext("2d");
+  let w, h;
+
+  function resize() {
+    w = canvas.width = innerWidth;
+    h = canvas.height = innerHeight;
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  const particles = [...Array(120)].map(() => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 2 + 1,
+    vx: (Math.random() - .5) * .4,
+    vy: (Math.random() - .5) * .4
+  }));
+
+  (function animate() {
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = "rgba(127,92,255,.6)";
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  })();
+}
 
 /* FAQ TOGGLE */
 document.querySelectorAll(".faq-q").forEach(q=>{
@@ -53,3 +65,4 @@ document.querySelectorAll(".faq-q").forEach(q=>{
     q.parentElement.classList.toggle("active");
   };
 });
+
