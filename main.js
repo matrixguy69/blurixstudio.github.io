@@ -46,3 +46,10 @@ let p=[...Array(120)].map(()=>({
   });
   requestAnimationFrame(a);
 })();
+
+/* FAQ TOGGLE */
+document.querySelectorAll(".faq-q").forEach(q=>{
+  q.onclick=()=>{
+    q.parentElement.classList.toggle("active");
+  };
+});
