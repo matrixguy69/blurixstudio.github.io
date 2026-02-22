@@ -343,3 +343,23 @@ a{text-decoration:none;color:inherit}
   border-radius: 14px;
   font-size: .9rem;
 }
+
+/* SERVICES PAGE */
+.services-hero {
+  height: 70vh;
+}
+
+.services-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.service-card h3 {
+  font-family: Space Grotesk;
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+
+.service-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
