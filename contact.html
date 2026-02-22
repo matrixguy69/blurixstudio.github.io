@@ -1,53 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact | Blurix Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Contact — Blurix Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="side-menu" id="sideMenu">
-  <div class="side-logo">Blurix Studio</div>
-  <nav>
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="side-contact">
-    <button onclick="goDiscord()">Discord</button>
-    <button onclick="goWhatsApp()">WhatsApp</button>
-  </div>
-</div>
-
+<!-- NAV -->
 <header class="nav">
-  <a href="index.html" class="logo">Blurix Studio</a> <!-- clickable logo -->
-  <nav class="desktop-nav">
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="nav-actions">
-    <button id="themeToggle">☀</button>
-    <button id="menuToggle">☰</button>
+  <div class="nav-inner">
+    <div class="logo">Blurix</div>
+    <nav>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <button class="nav-cta" onclick="goWhatsApp()">Start Now</button>
   </div>
 </header>
 
-<section class="final-cta reveal">
-  <h2>Get in Touch with Blurix Studio</h2>
-  <p>Choose your preferred platform to contact us and start growing your brand today.</p>
-  <div class="cta-buttons">
-    <a href="#" onclick="goDiscord()">Contact via Discord</a>
-    <a href="#" onclick="goWhatsApp()">Contact via WhatsApp</a>
+<!-- CONTACT HERO -->
+<section class="hero contact-hero">
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <h1 class="split">
+      Let’s Build<br>
+      <span>Your Growth Engine</span>
+    </h1>
+
+    <p class="hero-sub">
+      Tell us where you want to go.  
+      We’ll handle the strategy, execution, and scale.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-card" onclick="goWhatsApp()">
+        <h3>WhatsApp</h3>
+        <p>Fastest response. Direct onboarding.</p>
+        <span>Chat Now →</span>
+      </div>
+
+      <div class="contact-card" onclick="goDiscord()">
+        <h3>Discord</h3>
+        <p>Community & long-term collaboration.</p>
+        <span>Join Server →</span>
+      </div>
+    </div>
+
+    <p class="contact-note">
+      Average response time: <strong>under 1 hour</strong>
+    </p>
   </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <h2>Serious About Growth?</h2>
+  <p>Let’s turn attention into revenue.</p>
+  <a class="cta primary" onclick="goWhatsApp()">Start Now</a>
 </section>
 
 <script src="main.js"></script>
 </body>
 </html>
-
-
