@@ -16,7 +16,7 @@
 <header class="nav">
   <div class="nav-inner">
     <!-- Logo goes back to main page -->
-    <a href="index.html" class="logo">Blurix Studio</a>
+    <a href="index.html" class="logo">Blurix</a>
 
     <!-- Navigation links -->
     <nav>
@@ -32,12 +32,50 @@
 </header>
 
 <style>
-  /* Example styling */
-  .nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #111; }
-  .logo { color: #fff; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
-  nav a { color: #ccc; margin: 0 1rem; text-decoration: none; font-weight: 500; }
-  nav a.active, nav a:hover { color: #fff; border-bottom: 2px solid #fff; }
-  .nav-cta { background: #ff5722; color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 5px; }
+  /* Navbar styling - Purple, White, Black theme */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1a0a3f; /* deep purple/blackish */
+  }
+
+  .logo {
+    color: #fff; /* white */
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  nav a {
+    color: #ccc; /* light grey text for inactive links */
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, border-bottom 0.3s;
+  }
+
+  nav a.active,
+  nav a:hover {
+    color: #b19cd9; /* light purple for hover/active */
+    border-bottom: 2px solid #b19cd9; /* underline effect */
+  }
+
+  .nav-cta {
+    background: #8a2be2; /* bright purple */
+    color: #fff; 
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .nav-cta:hover {
+    background: #6f1bd1; /* darker purple on hover */
+  }
 </style>
 
 <script>
@@ -135,6 +173,7 @@
 <script src="main.js"></script>
 </body>
 </html>
+
 
 
 
