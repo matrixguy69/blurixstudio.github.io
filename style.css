@@ -188,6 +188,7 @@ a{text-decoration:none;color:inherit}
   padding:160px 40px;
   text-align:center;
 }
+
 /* CONTACT PAGE */
 .contact-hero {
   height: 100vh;
@@ -236,4 +237,62 @@ a{text-decoration:none;color:inherit}
   margin-top: 50px;
   color: var(--muted);
   font-size: .95rem;
+}
+
+/* FAQ PAGE */
+.faq-hero {
+  height: 70vh;
+}
+
+.faq-wrap {
+  max-width: 900px;
+  margin: auto;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text);
+  padding: 26px 30px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-q span {
+  font-size: 1.5rem;
+  transition: .4s;
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+}
+
+.faq-a p {
+  padding: 0 30px 26px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-a {
+  max-height: 300px;
+}
+
+.faq-item.active .faq-q span {
+  transform: rotate(45deg);
 }
