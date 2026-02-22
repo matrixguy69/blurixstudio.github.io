@@ -1,3 +1,8 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 :root{
   --bg:#0b0d12;
   --surface:rgba(255,255,255,.04);
@@ -120,6 +125,14 @@ a{text-decoration:none;color:inherit}
   padding:120px 40px;
   max-width:1200px;
   margin:auto;
+}
+
+.section,
+.hero,
+.final {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .section-title{
@@ -362,4 +375,19 @@ a{text-decoration:none;color:inherit}
 .service-card p {
   color: var(--muted);
   line-height: 1.6;
+}
+
+#particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+.hero-content,
+.section,
+.nav-inner {
+  margin-left: auto;
+  margin-right: auto;
 }
