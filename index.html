@@ -1,184 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Blurix Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Blurix Studio — Growth Engine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- SIDE MENU -->
-<div class="side-menu" id="sideMenu">
-  <a href="index.html" class="logo">Blurix Studio</a>
-  <nav>
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="side-contact">
-    <button onclick="goDiscord()">Discord</button>
-    <button onclick="goWhatsApp()">WhatsApp</button>
-  </div>
-</div>
-
-<!-- NAVIGATION -->
+<!-- NAV -->
 <header class="nav">
-  <a href="index.html" class="logo">Blurix Studio</a> <!-- clickable logo -->
-  <nav class="desktop-nav">
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="nav-actions">
-    <button id="themeToggle">☀</button>
-    <button id="menuToggle">☰</button>
+  <div class="nav-inner">
+    <div class="logo">Blurix</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="nav-cta" onclick="goWhatsApp()">Start Now</button>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <canvas id="particles"></canvas>
-  <div class="hero-content reveal">
-    <h1>
-      Elevate Your<br>
-      <span>Brand with Blurix</span>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <h1 class="split">
+      We Turn Attention<br>
+      <span>Into Revenue</span>
     </h1>
-    <p>Expert Social Media Marketing, Ads, SEO & Analytics for all niches.</p>
-    <div class="hero-buttons">
-      <a href="#" class="cta" onclick="goDiscord(); return false;">Buy via Discord</a>
-      <a href="#" class="cta" onclick="goWhatsApp(); return false;">Buy via WhatsApp</a>
+
+    <p class="hero-sub">
+      Full-stack social media growth for brands that want results,
+      not excuses.
+    </p>
+
+    <div class="hero-actions">
+      <a class="cta primary" onclick="goWhatsApp()">Start via WhatsApp</a>
+      <a class="cta ghost" href="#services">View Services</a>
+    </div>
+
+    <div class="hero-stats">
+      <div><strong data-count="67">0</strong><span>Projects</span></div>
+      <div><strong data-count="30">0</strong><span>Clients</span></div>
+      <div><strong data-count="99">0</strong><span>Satisfaction</span></div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="stat reveal"><h2 data-count="67">0</h2><p>Projects Completed</p></div>
-  <div class="stat reveal"><h2 data-count="30">0</h2><p>Clients Served</p></div>
-  <div class="stat reveal"><h2 data-count="99">0</h2><p>Satisfaction %</p></div>
-</section>
-
 <!-- SERVICES -->
-<section id="services" class="services reveal">
-  <h2 class="section-title">Our Services</h2>
-  <div class="service-grid">
-    <div class="service-card reveal">Social Media Management</div>
-    <div class="service-card reveal">Paid Advertising (Facebook, Google, TikTok)</div>
-    <div class="service-card reveal">SEO & Analytics</div>
-    <div class="service-card reveal">Content Creation</div>
-    <div class="service-card reveal">Brand Consulting</div>
-    <div class="service-card reveal">Email & SMS Marketing</div>
+<section id="services" class="section">
+  <h2 class="section-title">What We Do</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Social Media Growth</h3>
+      <p>Consistent content, audience building and brand authority.</p>
+    </div>
+    <div class="card">
+      <h3>Paid Advertising</h3>
+      <p>Profit-focused ads across Meta, Google & TikTok.</p>
+    </div>
+    <div class="card">
+      <h3>SEO & Analytics</h3>
+      <p>Data-driven decisions backed by real metrics.</p>
+    </div>
+    <div class="card">
+      <h3>Content Creation</h3>
+      <p>High-retention visuals engineered to convert.</p>
+    </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing" class="pricing reveal">
-  <h2 class="section-title">Pricing Plans</h2>
-
-  <div class="billing-toggle reveal">
-    <span>Monthly</span>
-    <input type="checkbox" id="billingSwitch">
-    <span>Yearly</span>
-  </div>
+<section id="pricing" class="section dark">
+  <h2 class="section-title">Pricing</h2>
 
   <div class="pricing-grid">
-    <div class="price-card reveal">
+    <div class="price-card">
       <h3>Starter</h3>
-      <p class="price" data-month="30,000" data-year="300,000">PKR 30,000</p>
+      <p class="price">PKR 30,000</p>
       <ul>
-        <li>1 Platform Management</li>
+        <li>1 Platform</li>
         <li>Basic Ads</li>
-        <li>Reporting</li>
+        <li>Monthly Report</li>
       </ul>
-      <button onclick="goWhatsApp()">Buy</button>
+      <button onclick="goWhatsApp()">Get Started</button>
     </div>
 
-    <div class="price-card featured reveal">
+    <div class="price-card featured">
+      <span class="badge">Most Popular</span>
       <h3>Pro</h3>
-      <p class="price" data-month="60,000" data-year="600,000">PKR 60,000</p>
+      <p class="price">PKR 60,000</p>
       <ul>
-        <li>3 Platform Management</li>
+        <li>3 Platforms</li>
         <li>Advanced Ads</li>
         <li>SEO & Analytics</li>
       </ul>
-      <button onclick="goWhatsApp()">Buy</button>
+      <button onclick="goWhatsApp()">Scale Now</button>
     </div>
 
-    <div class="price-card reveal">
+    <div class="price-card">
       <h3>Elite</h3>
-      <p class="price" data-month="100,000" data-year="1,000,000">PKR 100,000</p>
+      <p class="price">PKR 100,000</p>
       <ul>
         <li>All Platforms</li>
-        <li>Full Ads & Marketing</li>
-        <li>Custom Consulting</li>
+        <li>Full Funnel Ads</li>
+        <li>Dedicated Manager</li>
       </ul>
-      <button onclick="goWhatsApp()">Buy</button>
+      <button onclick="goWhatsApp()">Contact Us</button>
     </div>
-  </div>
-
-  <div class="payments reveal">
-    <p>Payments Accepted:</p>
-    <span>PayPal</span>
-    <span>Stripe</span>
-    <span>Crypto</span>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="faq reveal">
+<section id="faq" class="section">
   <h2 class="section-title">FAQ</h2>
-  <div class="faq-item reveal">
-    <h4>How long until I see results?</h4>
-    <p>Typically within 2–4 weeks depending on ad campaigns and engagement.</p>
-  </div>
-  <div class="faq-item reveal">
-    <h4>Do you handle all platforms?</h4>
-    <p>Yes! Facebook, Instagram, TikTok, Google, YouTube & more.</p>
-  </div>
-  <div class="faq-item reveal">
-    <h4>How do I get started?</h4>
-    <p>Click Buy via Discord or WhatsApp and our team will guide you.</p>
+
+  <div class="faq">
+    <div class="faq-item">
+      <h4>How fast are results?</h4>
+      <p>Most clients see traction within 2–4 weeks.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do you manage everything?</h4>
+      <p>Yes. Strategy, execution, optimization — all handled.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How do we start?</h4>
+      <p>Click Start Now and we onboard you immediately.</p>
+    </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials reveal">
-  <h2 class="section-title">What Clients Say</h2>
-  <div class="testimonial-grid">
-    <div class="testimonial reveal">“Professional, fast, and highly effective!”</div>
-    <div class="testimonial reveal">“Our ad campaigns never looked better.”</div>
-    <div class="testimonial reveal">“Full-service marketing that delivers results.”</div>
-  </div>
-</section>
-
-<!-- CONTACT / CTA -->
-<section id="contact" class="final-cta reveal">
-  <h2>Ready to grow your brand?</h2>
-  <div class="cta-buttons">
-    <a href="#" onclick="goDiscord()">Contact via Discord</a>
-    <a href="#" onclick="goWhatsApp()">Contact via WhatsApp</a>
-  </div>
+<!-- CTA -->
+<section class="final">
+  <h2>Ready to Scale?</h2>
+  <p>Let’s build your growth engine.</p>
+  <a class="cta primary" onclick="goWhatsApp()">Start Now</a>
 </section>
 
 <script src="main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
