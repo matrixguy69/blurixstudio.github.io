@@ -1,58 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Services | Blurix Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Services — Blurix Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Include Side Menu -->
-<div class="side-menu" id="sideMenu">
-  <div class="side-logo">Blurix Studio</div>
-  <nav>
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="side-contact">
-    <button onclick="goDiscord()">Discord</button>
-    <button onclick="goWhatsApp()">WhatsApp</button>
-  </div>
-</div>
-
+<!-- NAV -->
 <header class="nav">
-  <a href="index.html" class="logo">Blurix Studio</a> <!-- clickable logo -->
-  <nav class="desktop-nav">
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="nav-actions">
-    <button id="themeToggle">☀</button>
-    <button id="menuToggle">☰</button>
+  <div class="nav-inner">
+    <div class="logo">Blurix</div>
+    <nav>
+      <a href="services.html" class="active">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-cta" onclick="goWhatsApp()">Start Now</button>
   </div>
 </header>
 
+<!-- SERVICES HERO -->
+<section class="hero services-hero">
+  <div class="hero-glow"></div>
 
-<section class="services reveal">
-  <h2 class="section-title">Our Services</h2>
-  <div class="service-grid">
-    <div class="service-card reveal">Social Media Management</div>
-    <div class="service-card reveal">Paid Advertising (FB, Google, TikTok)</div>
-    <div class="service-card reveal">SEO & Analytics</div>
-    <div class="service-card reveal">Content Creation</div>
-    <div class="service-card reveal">Brand Consulting</div>
-    <div class="service-card reveal">Email & SMS Marketing</div>
+  <div class="hero-content">
+    <h1 class="split">
+      What We Do<br>
+      <span>And Why It Works</span>
+    </h1>
+
+    <p class="hero-sub">
+      Every service is designed around one goal:
+      sustainable, measurable growth.
+    </p>
   </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="section">
+  <div class="grid services-grid">
+
+    <div class="card service-card">
+      <h3>Social Media Growth</h3>
+      <p>
+        We build brand authority through consistent, high-quality content
+        and audience engagement strategies that compound over time.
+      </p>
+    </div>
+
+    <div class="card service-card">
+      <h3>Paid Advertising</h3>
+      <p>
+        Conversion-focused ads across Meta, Google, and TikTok
+        engineered for ROI — not vanity metrics.
+      </p>
+    </div>
+
+    <div class="card service-card">
+      <h3>SEO & Analytics</h3>
+      <p>
+        Data-driven insights that guide smarter decisions,
+        stronger funnels, and higher lifetime value.
+      </p>
+    </div>
+
+    <div class="card service-card">
+      <h3>Content Creation</h3>
+      <p>
+        Scroll-stopping creatives designed for retention,
+        engagement, and brand memorability.
+      </p>
+    </div>
+
+    <div class="card service-card">
+      <h3>Brand Consulting</h3>
+      <p>
+        Positioning, messaging, and strategy aligned with
+        your long-term growth vision.
+      </p>
+    </div>
+
+    <div class="card service-card">
+      <h3>Email & SMS Marketing</h3>
+      <p>
+        Automated flows that nurture leads,
+        increase conversions, and maximize retention.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <h2>Ready to Grow With Purpose?</h2>
+  <p>Let’s build something scalable.</p>
+  <a class="cta primary" onclick="goWhatsApp()">Start Now</a>
 </section>
 
 <script src="main.js"></script>
 </body>
 </html>
-
-
