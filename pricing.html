@@ -1,99 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pricing | Blurix Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Pricing — Blurix Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="side-menu" id="sideMenu">
-  <div class="side-logo">Blurix Studio</div>
-  <nav>
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="side-contact">
-    <button onclick="goDiscord()">Discord</button>
-    <button onclick="goWhatsApp()">WhatsApp</button>
-  </div>
-</div>
-
+<!-- NAV -->
 <header class="nav">
-  <a href="index.html" class="logo">Blurix Studio</a> <!-- clickable logo -->
-  <nav class="desktop-nav">
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="nav-actions">
-    <button id="themeToggle">☀</button>
-    <button id="menuToggle">☰</button>
+  <div class="nav-inner">
+    <div class="logo">Blurix</div>
+    <nav>
+      <a href="services.html">Services</a>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-cta" onclick="goWhatsApp()">Start Now</button>
   </div>
 </header>
 
-<section class="pricing reveal">
-  <h2 class="section-title">Pricing Plans</h2>
+<!-- PRICING HERO -->
+<section class="hero pricing-hero">
+  <div class="hero-glow"></div>
 
-  <div class="billing-toggle reveal">
-    <span>Monthly</span>
-    <input type="checkbox" id="billingSwitch">
-    <span>Yearly</span>
+  <div class="hero-content">
+    <h1 class="split">
+      Simple Pricing.<br>
+      <span>Serious Results.</span>
+    </h1>
+
+    <p class="hero-sub">
+      Choose a plan built to scale brands — not just manage posts.
+    </p>
   </div>
+</section>
 
+<!-- PRICING -->
+<section class="section">
   <div class="pricing-grid">
-    <div class="price-card reveal">
+
+    <div class="price-card">
       <h3>Starter</h3>
-      <p class="price" data-month="30,000" data-year="300,000">PKR 30,000</p>
+      <p class="price">PKR 30,000</p>
+      <p class="price-note">Best for small brands testing growth</p>
+
       <ul>
         <li>1 Platform Management</li>
-        <li>Basic Ads</li>
-        <li>Reporting</li>
+        <li>Basic Paid Ads</li>
+        <li>Monthly Performance Report</li>
       </ul>
-      <button onclick="goWhatsApp()">Buy</button>
+
+      <button onclick="goWhatsApp()">Get Started</button>
     </div>
 
-    <div class="price-card featured reveal">
+    <div class="price-card featured">
+      <span class="badge">Most Popular</span>
       <h3>Pro</h3>
-      <p class="price" data-month="60,000" data-year="600,000">PKR 60,000</p>
+      <p class="price">PKR 60,000</p>
+      <p class="price-note">Designed for scaling businesses</p>
+
       <ul>
         <li>3 Platform Management</li>
-        <li>Advanced Ads</li>
+        <li>Advanced Ads Strategy</li>
         <li>SEO & Analytics</li>
+        <li>Conversion Optimization</li>
       </ul>
-      <button onclick="goWhatsApp()">Buy</button>
+
+      <button onclick="goWhatsApp()">Scale Now</button>
     </div>
 
-    <div class="price-card reveal">
+    <div class="price-card">
       <h3>Elite</h3>
-      <p class="price" data-month="100,000" data-year="1,000,000">PKR 100,000</p>
+      <p class="price">PKR 100,000</p>
+      <p class="price-note">For brands that want dominance</p>
+
       <ul>
         <li>All Platforms</li>
-        <li>Full Ads & Marketing</li>
-        <li>Custom Consulting</li>
+        <li>Full Funnel Ads</li>
+        <li>Dedicated Manager</li>
+        <li>Custom Growth Strategy</li>
       </ul>
-      <button onclick="goWhatsApp()">Buy</button>
+
+      <button onclick="goWhatsApp()">Talk to Us</button>
     </div>
+
   </div>
 
-  <div class="payments reveal">
-    <p>Payments Accepted:</p>
+  <div class="payments">
     <span>PayPal</span>
     <span>Stripe</span>
     <span>Crypto</span>
   </div>
 </section>
 
+<!-- FINAL CTA -->
+<section class="final">
+  <h2>Not Sure Which Plan Fits?</h2>
+  <p>We’ll help you choose the right growth path.</p>
+  <a class="cta primary" onclick="goWhatsApp()">Talk to Us</a>
+</section>
+
 <script src="main.js"></script>
 </body>
 </html>
-
-
-
-
-
