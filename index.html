@@ -3,32 +3,36 @@
 <head>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="page">
 
 <header class="nav">
   <div class="nav-inner">
     <div class="logo">Wizmn Studios</div>
 
-    <div class="menu" onclick="toggleMenu()">
-      <div></div><div></div><div></div>
-    </div>
-
     <div class="links">
       <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-      <a onclick="toggleTheme()">Theme</a>
     </div>
   </div>
 </header>
 
-<section class="hero fade">
-  <h1>We Build <span>High Conversion Systems</span></h1>
-  <p>Not websites. Revenue engines.</p>
-  <button onclick="location.href='contact.html'">Get Started</button>
+<section class="hero">
+  <h1>We Build <span>Revenue Machines</span></h1>
+  <p>High-conversion systems for modern brands</p>
+  <button onclick="location.href='contact.html'">Start Now</button>
 </section>
 
-</body>
+<section class="grid">
+  <div class="card">High Conversion Design</div>
+  <div class="card">Paid Ads Systems</div>
+  <div class="card">Funnel Optimization</div>
+</section>
+
 <script src="main.js"></script>
+</body>
 </html>
