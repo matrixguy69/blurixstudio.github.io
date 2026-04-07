@@ -1,226 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Blurix Studio — Growth Engine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<title>Wizmn Studios</title>
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
 </head>
+
 <body>
 
-<!-- NAV -->
-<header class="nav">
-  <div class="nav-inner">
-    <!-- Logo goes back to main page -->
-    <a href="index.html" class="logo">Blurix Studio</a>
-
-    <!-- Navigation links -->
-    <nav>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="faq.html" class="nav-link">FAQ</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-
-    <!-- CTA button -->
-    <button class="nav-cta" onclick="goWhatsApp()">Start Now</button>
+<nav class="nav">
+  <a href="/" data-link>Wizmn</a>
+  <div>
+    <a href="/services" data-link>Services</a>
+    <a href="/pricing" data-link>Pricing</a>
+    <a href="/faq" data-link>FAQ</a>
+    <a href="/contact" data-link>Contact</a>
   </div>
-</header>
+</nav>
 
-<style>
-  /* Navbar styling - Purple, White, Black theme */
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: linear-gradient(90deg, #000000, #1a0a3f); 
-  }
+<main id="app"></main>
 
-  .logo {
-    color: #fff; /* white */
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  nav a {
-    color: #ccc; /* light grey text for inactive links */
-    margin: 0 1rem;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s, border-bottom 0.3s;
-  }
-
-  nav a.active,
-  nav a:hover {
-    color: #b19cd9; /* light purple for hover/active */
-    border-bottom: 2px solid #b19cd9; /* underline effect */
-  }
-
-  .nav-cta {
-    background: #8a2be2; /* bright purple */
-    color: #fff; 
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-
-  .nav-cta:hover {
-    background: #6f1bd1; /* darker purple on hover */
-  }
-</style>
-
-<script>
-  // Highlight active page link
-  const navLinks = document.querySelectorAll('.nav-link');
-  const currentPage = window.location.pathname.split("/").pop(); // get current file name
-
-  navLinks.forEach(link => {
-    if(link.getAttribute('href') === currentPage) {
-      link.classList.add('active');
-    }
-  });
-</script>
-  
-<!-- HERO -->
-<section class="hero">
-  <canvas id="particles"></canvas>
-  <div class="hero-glow"></div>
-
-  <div class="hero-content">
-    <h1 class="split">
-      We Turn Attention<br>
-      <span>Into Revenue</span>
-    </h1>
-
-    <p class="hero-sub">
-      Full-stack social media growth for brands that want results,
-      not excuses.
-    </p>
-
-    <div class="hero-actions">
-      <a class="cta primary" onclick="goWhatsApp()">Start via WhatsApp</a>
-      <a class="cta ghost" href="#services">View Services</a>
-    </div>
-
-    <div class="hero-stats">
-      <div><strong data-count="67">0</strong><span>Projects</span></div>
-      <div><strong data-count="30">0</strong><span>Clients</span></div>
-      <div><strong data-count="99">0</strong><span>Satisfaction</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="section">
-  <h2 class="section-title">What We Do</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Social Media Growth</h3>
-      <p>Consistent content, audience building and brand authority.</p>
-    </div>
-    <div class="card">
-      <h3>Paid Advertising</h3>
-      <p>Profit-focused ads across Meta, Google & TikTok.</p>
-    </div>
-    <div class="card">
-      <h3>SEO & Analytics</h3>
-      <p>Data-driven decisions backed by real metrics.</p>
-    </div>
-    <div class="card">
-      <h3>Content Creation</h3>
-      <p>High-retention visuals engineered to convert.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing" class="section dark">
-  <h2 class="section-title">Pricing</h2>
-
-  <div class="pricing-grid">
-    <div class="price-card">
-      <h3>Starter</h3>
-      <p class="price">PKR 30,000</p>
-      <ul>
-        <li>1 Platform</li>
-        <li>Basic Ads</li>
-        <li>Monthly Report</li>
-      </ul>
-      <button onclick="goWhatsApp()">Get Started</button>
-    </div>
-
-    <div class="price-card featured">
-      <span class="badge">Most Popular</span>
-      <h3>Pro</h3>
-      <p class="price">PKR 60,000</p>
-      <ul>
-        <li>3 Platforms</li>
-        <li>Advanced Ads</li>
-        <li>SEO & Analytics</li>
-      </ul>
-      <button onclick="goWhatsApp()">Scale Now</button>
-    </div>
-
-    <div class="price-card">
-      <h3>Elite</h3>
-      <p class="price">PKR 100,000</p>
-      <ul>
-        <li>All Platforms</li>
-        <li>Full Funnel Ads</li>
-        <li>Dedicated Manager</li>
-      </ul>
-      <button onclick="goWhatsApp()">Contact Us</button>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="section">
-  <h2 class="section-title">FAQ</h2>
-
-  <div class="faq">
-    <div class="faq-item">
-      <h4> How fast are results?</h4>
-      <p> Most clients see traction within 2–4 weeks.</p>
-    </div>
-    <div class="faq-item">
-      <h4> Do you manage everything?</h4>
-      <p> Yes. Strategy, execution, optimization — all handled.</p>
-    </div>
-    <div class="faq-item">
-      <h4> How do we start?</h4>
-      <p> Click Start Now and we onboard you immediately.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="final">
-  <h2>Ready to Scale?</h2>
-  <p>Let’s build your growth engine.</p>
-  <a class="cta primary" onclick="goWhatsApp()">Start Now</a>
-</section>
-
-<script src="main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
