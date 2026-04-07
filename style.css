@@ -11,105 +11,82 @@
 }
 
 body{
-  font-family:Inter, sans-serif;
+  font-family:Arial, sans-serif;
   background:var(--bg);
   color:white;
   overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* FIXED NAVBAR (THIS WAS YOUR BUG) */
 .nav{
   position:fixed;
   top:0;
+  left:0;
   width:100%;
   display:flex;
   justify-content:space-between;
-  padding:18px 30px;
-  background:rgba(0,0,0,0.4);
-  backdrop-filter:blur(12px);
+  align-items:center;
+  padding:15px 30px;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(10px);
   z-index:999;
+}
+
+.nav-links{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
 }
 
 .nav a{
   color:white;
-  margin:0 10px;
   text-decoration:none;
-  transition:0.3s;
 }
 
 .nav a:hover{
   color:var(--green);
-  text-shadow:0 0 10px var(--green);
+}
+
+/* BACKGROUND FIX */
+#particles-js{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
 }
 
 /* HERO */
 .hero{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  margin-top:120px;
   text-align:center;
-}
-
-.hero h1{
-  font-size:60px;
-  text-shadow:0 0 25px rgba(0,255,136,0.4);
+  padding:80px 20px;
 }
 
 .hero span{
   color:var(--green);
 }
 
-/* GRID SYSTEM */
+/* CARDS */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-  padding:60px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:40px;
 }
 
-/* PREMIUM CARDS */
 .card{
   background:var(--glass);
   border:1px solid rgba(0,255,136,0.2);
-  padding:25px;
-  border-radius:16px;
-  backdrop-filter:blur(15px);
-  transition:0.4s;
-}
-
-.card:hover{
-  transform:translateY(-10px) scale(1.02);
-  box-shadow:0 0 30px rgba(0,255,136,0.25);
+  padding:20px;
+  border-radius:12px;
 }
 
 /* BUTTON */
 .btn{
   background:var(--green);
-  color:black;
-  padding:12px 18px;
   border:none;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.btn:hover{
-  box-shadow:0 0 20px var(--green);
-}
-
-/* FOOTER */
-.footer{
-  padding:40px;
-  text-align:center;
-  border-top:1px solid rgba(255,255,255,0.1);
-  margin-top:60px;
-}
-
-.footer a{
-  color:var(--green);
-  margin:0 10px;
-  text-decoration:none;
+  padding:10px 15px;
+  border-radius:8px;
 }
