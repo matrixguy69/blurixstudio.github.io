@@ -1,35 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Contact - Wizmn Studios</title>
-
-<meta property="og:title" content="Contact - Wizmn Studios">
-
-<link rel="stylesheet" href="style.css">
-<script src="main.js" defer></script>
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header class="nav">
   <div class="nav-inner">
     <a class="logo" href="index.html">Wizmn Studios</a>
+    <nav>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-cta" onclick="goWhatsApp()">Start Now</button>
   </div>
 </header>
 
-<main class="section">
-  <h1 class="reveal">Contact</h1>
+<section class="hero">
+  <h1>Contact <span>Us</span></h1>
+</section>
 
-  <form action="https://formsubmit.co/youremail@gmail.com" method="POST" class="card">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" placeholder="Message" required></textarea>
-    <button class="cta">Send</button>
-  </form>
-</main>
+<div class="cta">
+  <button onclick="goWhatsApp()">Message on WhatsApp</button>
+</div>
 
 </body>
 </html>
