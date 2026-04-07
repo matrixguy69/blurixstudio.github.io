@@ -1,31 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Contact</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="nav">
-  <div class="nav-inner">
-    <a class="logo" href="index.html">Wizmn Studios</a>
-    <nav>
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <button class="nav-cta" onclick="goWhatsApp()">Start Now</button>
-  </div>
-</header>
-
 <section class="hero">
-  <h1>Contact <span>Us</span></h1>
+  <h1>Contact</h1>
 </section>
 
-<div class="cta">
-  <button onclick="goWhatsApp()">Message on WhatsApp</button>
+<div class="grid">
+
+<div class="card">
+<h3>WhatsApp</h3>
+<button onclick="goWhatsApp()">Open Chat</button>
 </div>
 
-</body>
-</html>
+<div class="card">
+<h3>Discord</h3>
+<button onclick="goDiscord()">Join Server</button>
+</div>
+
+<div class="card">
+<h3>Email</h3>
+<form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+  <input name="email" placeholder="Your email">
+  <input name="message" placeholder="Message">
+  <button type="submit">Send</button>
+</form>
+</div>
+
+</div>
