@@ -1,156 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
 :root{
   --bg:#050a07;
-  --card:#0d1511;
+  --card:rgba(255,255,255,0.04);
   --green:#00ff88;
   --text:#eafff3;
-  --muted:#9bb7a8;
 }
 
-[data-theme="light"]{
-  --bg:#f5f7f6;
-  --card:#ffffff;
-  --text:#0b1a12;
-  --muted:#445a4f;
-}
-
+/* RESET */
 body{
   margin:0;
-  font-family:Arial;
-  background:var(--bg);
+  font-family:Inter;
   color:var(--text);
   overflow-x:hidden;
-  transition:0.4s;
 }
 
-/* NAV */
+/* ===== ANIMATED BACKGROUND (MESH) ===== */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background: radial-gradient(circle at 20% 20%, rgba(0,255,136,0.15), transparent 40%),
+              radial-gradient(circle at 80% 30%, rgba(0,255,200,0.12), transparent 40%),
+              radial-gradient(circle at 50% 80%, rgba(0,180,255,0.08), transparent 40%);
+  animation: move 12s infinite alternate;
+  z-index:-2;
+}
+
+@keyframes move{
+  from{transform:scale(1) rotate(0deg);}
+  to{transform:scale(1.2) rotate(6deg);}
+}
+
+/* NAVBAR FIXED */
 .nav{
   position:fixed;
-  width:100%;
   top:0;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(12px);
+  width:100%;
   z-index:999;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(0,255,136,0.2);
 }
 
 .nav-inner{
   display:flex;
   justify-content:space-between;
-  padding:15px 20px;
-  align-items:center;
+  padding:15px 25px;
 }
 
 .logo{
+  font-weight:800;
   color:var(--green);
-  font-weight:bold;
 }
 
-/* MOBILE MENU */
-.menu{
-  display:none;
-  flex-direction:column;
-  gap:5px;
-  cursor:pointer;
-}
-
-.menu div{
-  width:25px;
-  height:3px;
-  background:var(--green);
-}
-
-/* NAV LINKS */
+/* LINKS */
 .links{
   display:flex;
-  gap:15px;
+  gap:18px;
 }
 
 .links a{
   color:var(--text);
   text-decoration:none;
+  transition:0.3s;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .links{
-    display:none;
-    flex-direction:column;
-    position:absolute;
-    top:60px;
-    right:20px;
-    background:var(--card);
-    padding:15px;
-    border-radius:10px;
-  }
-  .links.active{display:flex;}
-  .menu{display:flex;}
-}
-
-/* HERO */
-.hero{
-  padding:140px 20px 60px;
-  text-align:center;
-}
-
-.hero h1 span{
+.links a:hover{
   color:var(--green);
 }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  padding:40px;
+/* HERO (INSANE LEVEL) */
+.hero{
+  padding:160px 20px 80px;
+  text-align:center;
 }
 
-/* CARD */
+.hero h1{
+  font-size:58px;
+  font-weight:800;
+  letter-spacing:-1px;
+}
+
+.hero span{
+  color:var(--green);
+  text-shadow:0 0 25px var(--green);
+}
+
+/* GRID SYSTEM */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+  padding:50px;
+}
+
+/* PREMIUM CARD */
 .card{
   background:var(--card);
   border:1px solid rgba(0,255,136,0.15);
-  padding:20px;
-  border-radius:14px;
-  transition:0.3s;
-  cursor:pointer;
+  padding:22px;
+  border-radius:16px;
+  transition:0.35s;
+  backdrop-filter:blur(10px);
 }
 
 .card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 25px rgba(0,255,136,0.2);
-}
-
-/* MODAL */
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.8);
-  display:none;
-  align-items:center;
-  justify-content:center;
-}
-
-.modal-content{
-  background:var(--card);
-  padding:20px;
-  border-radius:12px;
-  max-width:500px;
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 0 30px rgba(0,255,136,0.25);
 }
 
 /* BUTTON */
 button{
   background:var(--green);
   border:none;
-  padding:10px 15px;
-  border-radius:8px;
+  padding:12px 18px;
+  border-radius:10px;
   cursor:pointer;
+  font-weight:700;
+}
+
+/* SCROLL BAR (APPLE STYLE) */
+.scrollbar{
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  width:0%;
+  background:var(--green);
+  z-index:1000;
 }
 
 /* FADE TRANSITION */
-.fade{
-  opacity:0;
-  transform:translateY(20px);
-  animation:fade 0.6s forwards;
+.page{
+  animation:fade 0.6s ease;
 }
 
 @keyframes fade{
+  from{opacity:0; transform:translateY(20px);}
   to{opacity:1; transform:translateY(0);}
 }
