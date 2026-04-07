@@ -1,16 +1,21 @@
-// MOBILE MENU FIX
+// MOBILE MENU
 function toggleMenu(){
   document.querySelector(".nav-links").classList.toggle("active");
 }
 
-// SMOOTH PAGE LOAD FEEL
-window.addEventListener("load", () => {
-  document.body.style.opacity = 1;
-});
+// FAQ TOGGLE
+function toggleFAQ(el){
+  el.classList.toggle("open");
+}
 
-// SIMPLE ANIMATION TRIGGER
-document.querySelectorAll(".card").forEach(card=>{
-  card.addEventListener("mouseenter", ()=>{
-    card.style.boxShadow = "0 0 25px #00ff88";
-  });
-});
+// LEAD CAPTURE (CRM STYLE)
+function sendLead(){
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+
+  let leads = JSON.parse(localStorage.getItem("leads") || "[]");
+  leads.push({name,email});
+  localStorage.setItem("leads", JSON.stringify(leads));
+
+  alert("Lead saved!");
+}
