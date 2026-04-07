@@ -6,23 +6,59 @@
 
 <title>Wizmn Studios</title>
 
+<meta name="description" content="Wizmn Studios - Premium digital agency for modern brands. Web design, branding, and marketing funnels.">
+<meta name="keywords" content="web design, agency, branding, marketing, Wizmn Studios">
+<meta name="author" content="Wizmn Studios">
+
+<meta property="og:title" content="Wizmn Studios">
+<meta property="og:description" content="Premium digital agency for modern brands.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://yourdomain.com/preview.png">
+<meta property="og:url" content="https://yourdomain.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
 <script src="main.js" defer></script>
 </head>
 
 <body>
 
-<nav class="nav">
-  <a href="/" data-link>Wizmn</a>
-  <div>
-    <a href="/services" data-link>Services</a>
-    <a href="/pricing" data-link>Pricing</a>
-    <a href="/faq" data-link>FAQ</a>
-    <a href="/contact" data-link>Contact</a>
-  </div>
-</nav>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Wizmn Studios</a>
 
-<main id="app"></main>
+    <nav id="navMenu">
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button class="cta" onclick="goWhatsApp()">Start Now</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <h1 class="reveal">Build Faster <span>Grow Smarter</span></h1>
+      <p class="reveal">Premium digital agency for modern brands.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="reveal">Why Wizmn Studios</h2>
+    <div class="grid">
+      <div class="card reveal">⚡ Fast Delivery</div>
+      <div class="card reveal">🎨 Modern Design</div>
+      <div class="card reveal">📈 Conversion Focused</div>
+    </div>
+  </section>
+</main>
 
 </body>
 </html>
