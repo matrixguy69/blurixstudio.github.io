@@ -1,40 +1,33 @@
-function goWhatsApp(){
-  window.open("https://wa.me/YOURNUMBER","_blank");
+// THEME TOGGLE
+function toggleTheme(){
+  const t=document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute("data-theme",t==="light"?"dark":"light");
 }
 
-function goDiscord(){
-  window.open("https://discord.gg/YOURSERVER","_blank");
+// MOBILE MENU
+function toggleMenu(){
+  document.querySelector(".links").classList.toggle("active");
 }
 
-/* LOADER */
-window.onload = () => {
-  document.getElementById("loader").style.display = "none";
-};
+// SOUND HOVER (OPTIONAL)
+const hoverSound=new Audio("https://assets.mixkit.co/sfx/preview/mixkit-interface-click-1126.mp3");
 
-/* CURSOR GLOW */
-const cursor = document.createElement("div");
-cursor.id = "cursor";
-document.body.appendChild(cursor);
-
-document.addEventListener("mousemove", e=>{
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
-
-/* SCROLL REVEAL */
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("active");
-    }
+document.querySelectorAll(".card").forEach(c=>{
+  c.addEventListener("mouseenter",()=>{
+    hoverSound.play();
   });
 });
 
-document.querySelectorAll(".reveal").forEach(el=>{
-  observer.observe(el);
-});
+// PAGE FADE
+window.onload=()=>{
+  document.body.classList.add("fade");
+};
 
-/* SIMPLE FAQ */
-document.querySelectorAll(".faq").forEach(q=>{
-  q.onclick = ()=>q.classList.toggle("open");
-});
+// MODAL SYSTEM
+function openModal(text){
+  document.getElementById("modal-text").innerText=text;
+  document.getElementById("modal").style.display="flex";
+}
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
