@@ -1,8 +1,8 @@
-particlesJS("particles", {
+particlesJS("particles-js", {
   particles:{
-    number:{value:70},
+    number:{value:60},
     color:{value:"#00ff88"},
     size:{value:3},
-    move:{speed:1.2}
+    move:{speed:1}
   }
 });
