@@ -1,33 +1,36 @@
-// THEME TOGGLE
-function toggleTheme(){
-  const t=document.documentElement.getAttribute("data-theme");
-  document.documentElement.setAttribute("data-theme",t==="light"?"dark":"light");
-}
+// SCROLL PROGRESS BAR
+const bar=document.createElement("div");
+bar.className="scrollbar";
+document.body.appendChild(bar);
 
-// MOBILE MENU
+window.onscroll=()=>{
+  let h=document.documentElement;
+  let scrolled=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  bar.style.width=scrolled+"%";
+};
+
+// MOBILE NAV
 function toggleMenu(){
   document.querySelector(".links").classList.toggle("active");
 }
 
-// SOUND HOVER (OPTIONAL)
-const hoverSound=new Audio("https://assets.mixkit.co/sfx/preview/mixkit-interface-click-1126.mp3");
+// THEME TOGGLE (FIXED)
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
 
-document.querySelectorAll(".card").forEach(c=>{
-  c.addEventListener("mouseenter",()=>{
-    hoverSound.play();
-  });
+// CURSOR GLOW (OPTIONAL)
+const cursor=document.createElement("div");
+cursor.style.cssText=`
+position:fixed;width:20px;height:20px;
+background:#00ff88;border-radius:50%;
+filter:blur(12px);pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:9999;
+`;
+document.body.appendChild(cursor);
+
+document.addEventListener("mousemove",(e)=>{
+  cursor.style.left=e.clientX+"px";
+  cursor.style.top=e.clientY+"px";
 });
-
-// PAGE FADE
-window.onload=()=>{
-  document.body.classList.add("fade");
-};
-
-// MODAL SYSTEM
-function openModal(text){
-  document.getElementById("modal-text").innerText=text;
-  document.getElementById("modal").style.display="flex";
-}
-function closeModal(){
-  document.getElementById("modal").style.display="none";
-}
