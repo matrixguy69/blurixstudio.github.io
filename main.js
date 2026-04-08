@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
     
     let particles = [];
-    const particleCount = 60;
+    const particleCount = 70;
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
             this.size = Math.random() * 2 + 0.5;
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
+            this.speedX = Math.random() * 0.4 - 0.2;
+            this.speedY = Math.random() * 0.4 - 0.2;
             this.opacity = Math.random() * 0.5 + 0.2;
         }
         update() {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         draw() {
             ctx.fillStyle = `rgba(16, 185, 129, ${this.opacity})`;
-            ctx.shadowBlur = 10;
+            ctx.shadowBlur = 8;
             ctx.shadowColor = '#10b981';
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -51,33 +51,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     animate();
 
-    // 2. Mobile Sidebar Toggle
+    // 2. Mobile Sidebar
     const menuBtn = document.querySelector('.menu-btn');
     const sideMenu = document.querySelector('.side-menu');
     
-    if(menuBtn) {
-        menuBtn.addEventListener('click', () => {
-            sideMenu.classList.toggle('active');
-            menuBtn.innerHTML = sideMenu.classList.contains('active') ? '✕' : '☰';
-        });
-    }
+    menuBtn.addEventListener('click', () => {
+        sideMenu.classList.toggle('active');
+        menuBtn.innerHTML = sideMenu.classList.contains('active') ? '✕' : '☰';
+    });
 
-    // 3. Scroll Reveal
-    const revealOnScroll = new IntersectionObserver((entries) => {
+    // Close side menu when clicking a link
+    document.querySelectorAll('.side-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            sideMenu.classList.remove('active');
+            menuBtn.innerHTML = '☰';
+        });
+    });
+
+    // 3. Reveal Animation
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('active');
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => {
         el.style.opacity = "0";
         el.style.transform = "translateY(30px)";
-        el.style.transition = "all 0.8s ease-out";
-        revealOnScroll.observe(el);
+        el.style.transition = "all 0.8s cubic-bezier(0.2, 1, 0.3, 1)";
+        revealObserver.observe(el);
     });
 
-    // CSS Inject for reveal
+    // Inject visible style
     const style = document.createElement('style');
-    style.innerHTML = `.reveal.active { opacity: 1 !important; transform: translateY(0) !important; }`;
+    style.innerHTML = `.visible { opacity: 1 !important; transform: translateY(0) !important; }`;
     document.head.appendChild(style);
 });
