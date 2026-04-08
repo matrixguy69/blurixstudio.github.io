@@ -1,94 +1,112 @@
+/* Load Custom Font */
+@font-face {
+    font-family: 'Akira';
+    src: url('akira.otf') format('opentype'); /* Ensure akira.otf is in your folder */
+}
+
 :root {
     --bg: #020604;
     --primary: #10b981; 
-    --primary-glow: rgba(16, 185, 129, 0.5);
+    --primary-glow: rgba(16, 185, 129, 0.4);
     --accent: #34d399;
-    --glass: rgba(10, 25, 18, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass: rgba(10, 25, 18, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
     --text: #f8fafc;
     --text-dim: #94a3b8;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
     background: var(--bg); 
     color: var(--text); 
+    font-family: 'Inter', -apple-system, sans-serif; /* Global clean font */
     overflow-x: hidden; 
     min-height: 100vh;
+    /* Static Matrix Grid */
+    background-image: 
+        linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+    background-size: 45px 45px;
 }
 
-#particle-canvas {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1; pointer-events: none;
+/* ONLY THE BIG TITLES USE AKIRA */
+.title-gradient, h1 {
+    font-family: 'Akira', sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.1;
 }
-
-/* Nav & Mobile Menu */
-nav {
-    position: fixed; top: 0; width: 100%; z-index: 1000;
-    backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-    border-bottom: 1px solid var(--glass-border); padding: 1.2rem 8%;
-    display: flex; justify-content: space-between; align-items: center;
-}
-.logo { 
-    font-size: 1.8rem; font-weight: 900; color: var(--primary); 
-    text-decoration: none; text-shadow: 0 0 15px var(--primary-glow); 
-}
-.nav-links { display: flex; gap: 30px; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: 0.3s; }
-.nav-links a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
-
-.menu-btn { display: none; font-size: 2rem; color: var(--primary); cursor: pointer; }
-
-.side-menu {
-    position: fixed; top: 0; right: -100%; width: 280px; height: 100%;
-    background: rgba(2, 6, 4, 0.98); backdrop-filter: blur(20px);
-    z-index: 1100; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex; flex-direction: column; padding: 100px 40px; gap: 30px;
-    border-left: 1px solid var(--glass-border);
-}
-.side-menu.active { right: 0; }
-.side-menu a { text-decoration: none; color: white; font-size: 1.4rem; font-weight: 700; }
-
-/* Components */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-.section { padding: 140px 0 80px; min-height: 100vh; }
 
 .title-gradient {
     background: linear-gradient(to right, #fff, var(--primary), var(--accent));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 1.1;
+    font-size: clamp(2.2rem, 8vw, 4.8rem);
 }
+
+/* Everything else uses Inter */
+h2, h3, p, a, .btn, .badge {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Logo Image Styling */
+.logo-img {
+    height: 40px; 
+    width: auto;
+    filter: drop-shadow(0 0 10px var(--primary-glow));
+}
+
+/* Navbar */
+nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+    border-bottom: 1px solid var(--glass-border); padding: 1rem 8%;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links a { 
+    text-decoration: none; color: var(--text); 
+    font-size: 0.8rem; font-weight: 600; 
+    text-transform: uppercase; letter-spacing: 1px; 
+    transition: 0.3s; 
+}
+.nav-links a:hover { color: var(--primary); }
+
+.menu-btn { display: none; font-size: 1.5rem; color: var(--primary); cursor: pointer; }
+
+/* Side Menu */
+.side-menu {
+    position: fixed; top: 0; right: -100%; width: 280px; height: 100%;
+    background: rgba(2, 6, 4, 0.98); backdrop-filter: blur(20px);
+    z-index: 1100; transition: 0.5s ease;
+    display: flex; flex-direction: column; padding: 100px 40px; gap: 20px;
+}
+.side-menu.active { right: 0; }
+.side-menu a { text-decoration: none; color: white; font-weight: 700; font-size: 1.2rem; }
+
+/* Cards & Glassification */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+.section { padding: 160px 0 100px; min-height: 100vh; }
 
 .glass-card {
     background: var(--glass); border: 1px solid var(--glass-border);
-    padding: 2.5rem; border-radius: 30px; position: relative;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: inset 0 0 15px rgba(255,255,255,0.02);
+    padding: 2.5rem; border-radius: 24px; position: relative;
+    transition: 0.4s ease;
 }
 .glass-card:hover { 
     border-color: var(--primary); 
-    box-shadow: 0 0 40px var(--primary-glow), inset 0 0 10px var(--primary-glow);
-    transform: translateY(-10px);
-}
-
-.badge {
-    background: rgba(16, 185, 129, 0.15); color: var(--primary);
-    padding: 6px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 800;
-    border: 1px solid var(--primary-glow); display: inline-block; margin-bottom: 1rem;
+    box-shadow: 0 0 30px var(--primary-glow);
+    transform: translateY(-5px);
 }
 
 .btn {
-    padding: 16px 32px; border-radius: 16px; border: 1px solid var(--glass-border);
-    font-weight: 700; cursor: pointer; transition: 0.4s;
-    text-align: center; text-decoration: none; display: inline-block;
-    backdrop-filter: blur(10px); color: white; margin: 10px 5px;
+    padding: 16px 30px; border-radius: 12px; border: 1px solid var(--glass-border);
+    font-weight: 700; cursor: pointer; transition: 0.3s; text-decoration: none; 
+    display: inline-block; color: white; text-transform: uppercase; font-size: 0.8rem;
 }
-.btn-whatsapp { background: rgba(37, 211, 102, 0.15); border: 1px solid #25D366; }
-.btn-whatsapp:hover { background: #25D366; color: #000; box-shadow: 0 0 25px #25D366; }
-.btn-discord { background: rgba(88, 101, 242, 0.15); border: 1px solid #5865F2; }
-.btn-discord:hover { background: #5865F2; box-shadow: 0 0 25px #5865F2; }
+.btn-whatsapp { background: rgba(37, 211, 102, 0.1); border-color: #25D366; }
+.btn-whatsapp:hover { background: #25D366; color: #000; box-shadow: 0 0 20px #25D366; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
 
