@@ -1,39 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="stylesheet" href="style.css"><title>Pricing - Wizmn Hub</title></head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Plans | Wizmn Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
 <body>
-    <nav><a href="index.html" class="logo">WIZMN HUB</a></nav>
+    <!-- Navbar (Consistent on all pages) -->
+    <nav>
+        <a href="index.html" class="logo">WIZMN HUB</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
     <div class="container section">
-        <h1 class="title-gradient">The Elite Plans</h1>
+        <header style="text-align: center; margin-bottom: 50px;">
+            <span class="badge">ROI-DRIVEN PRICING</span>
+            <h1 class="title-gradient">Choose Your Growth</h1>
+            <p style="color: var(--text-dim);">Transparent pricing. No hidden fees. Just pure algorithm dominance.</p>
+        </header>
+
         <div class="grid">
+            <!-- Basic Tier -->
             <div class="glass-card reveal">
-                <span class="badge">GROWTH</span>
-                <h2>Starter Hub</h2>
-                <div style="font-size: 2.5rem; margin: 1rem 0;">$199<small style="font-size: 1rem;">/mo</small></div>
-                <ul style="list-style: none; color: var(--text-dim); margin-bottom: 2rem;">
-                    <li><i class="fa fa-check color-primary"></i> 15 Custom Posts</li>
-                    <li><i class="fa fa-check"></i> Basic SEO Optimization</li>
-                    <li><i class="fa fa-check"></i> Monthly Analytics</li>
+                <span class="badge">STARTER</span>
+                <h2 style="margin: 15px 0;">Foundation</h2>
+                <div style="font-size: 3rem; font-weight: 800; color: #fff;">$149<span style="font-size: 1rem; color: var(--text-dim);">/mo</span></div>
+                <p style="font-size: 0.9rem; color: var(--primary); margin-bottom: 20px;">Perfect for Personal Brands</p>
+                
+                <ul style="list-style: none; text-align: left; margin-bottom: 30px;">
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color: var(--primary);"></i> 10 High-Quality Posts</li>
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color: var(--primary);"></i> Viral Hook Scripting</li>
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color: var(--primary);"></i> Basic Hashtag Research</li>
+                    <li style="margin-bottom: 12px;"><i class="fa fa-circle" style="color: #333;"></i> 24/7 Account Audit</li>
                 </ul>
-                <p>Pay via:</p>
-                <a href="https://wa.me/YOURNUMBER" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Buy via WhatsApp</a>
-                <a href="YOUR_DISCORD_INVITE" class="btn btn-discord"><i class="fab fa-discord"></i> Buy via Discord</a>
+
+                <a href="https://wa.me/YOUR_NUMBER?text=I'm%20interested%20in%20the%20Foundation%20Plan" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+                </a>
+                <a href="YOUR_DISCORD_LINK" class="btn btn-discord">
+                    <i class="fab fa-discord"></i> Pay via Discord
+                </a>
             </div>
 
-            <div class="glass-card reveal" style="border-color: var(--primary); box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);">
-                <span class="badge" style="background: var(--primary); color: #000;">MOST POPULAR</span>
-                <h2>Agency Pro</h2>
-                <div style="font-size: 2.5rem; margin: 1rem 0;">$499<small style="font-size: 1rem;">/mo</small></div>
-                <ul style="list-style: none; color: var(--text-dim); margin-bottom: 2rem;">
-                    <li><i class="fa fa-check"></i> Daily Viral Posting</li>
-                    <li><i class="fa fa-check"></i> Influencer Outreach</li>
-                    <li><i class="fa fa-check"></i> Dedicated Account Manager</li>
+            <!-- Main Tier (Highlighted) -->
+            <div class="glass-card reveal" style="border: 2px solid var(--primary); transform: scale(1.05); z-index: 10; background: linear-gradient(145deg, rgba(16, 185, 129, 0.05), var(--glass));">
+                <div style="position: absolute; top: 0; right: 0; background: var(--primary); color: #000; padding: 5px 20px; font-weight: 900; font-size: 0.7rem; border-radius: 0 0 0 15px;">BEST SELLER</div>
+                <span class="badge" style="background: var(--primary); color: #000;">AGENCY ELITE</span>
+                <h2 style="margin: 15px 0;">Scale Pro</h2>
+                <div style="font-size: 3rem; font-weight: 800; color: #fff;">$399<span style="font-size: 1rem; color: var(--text-dim);">/mo</span></div>
+                <p style="font-size: 0.9rem; color: var(--primary); margin-bottom: 20px;">The Algorithm Dominator</p>
+                
+                <ul style="list-style: none; text-align: left; margin-bottom: 30px;">
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color: var(--primary);"></i> 30 Viral Ready Reels/Shorts</li>
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color: var(--primary);"></i> Shadowban Protection</li>
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color: var(--primary);"></i> Trend-Surfing Analytics</li>
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color: var(--primary);"></i> Dedicated Manager</li>
                 </ul>
-                <a href="https://wa.me/YOURNUMBER" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Buy via WhatsApp</a>
-                <a href="YOUR_DISCORD_INVITE" class="btn btn-discord"><i class="fab fa-discord"></i> Buy via Discord</a>
+
+                <a href="https://wa.me/YOUR_NUMBER?text=I'm%20interested%20in%20the%20Scale%20Pro%20Plan" class="btn btn-whatsapp" style="background: var(--primary); color: #000;">
+                    <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+                </a>
+                <a href="YOUR_DISCORD_LINK" class="btn btn-discord">
+                    <i class="fab fa-discord"></i> Pay via Discord
+                </a>
+            </div>
+
+            <!-- Enterprise Tier -->
+            <div class="glass-card reveal">
+                <span class="badge">ULTIMATE</span>
+                <h2 style="margin: 15px 0;">Enterprise</h2>
+                <div style="font-size: 3rem; font-weight: 800; color: #fff;">$899<span style="font-size: 1rem; color: var(--text-dim);">/mo</span></div>
+                <p style="font-size: 0.9rem; color: var(--primary); margin-bottom: 20px;">Corporate Expansion</p>
+                
+                <ul style="list-style: none; text-align: left; margin-bottom: 30px;">
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color: var(--primary);"></i> Unlimited Content Creation</li>
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color: var(--primary);"></i> Cross-Platform Automation</li>
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color: var(--primary);"></i> Influencer Collaboration</li>
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color: var(--primary);"></i> AI-Driven Predictive SEO</li>
+                </ul>
+
+                <a href="https://wa.me/YOUR_NUMBER?text=I'm%20interested%20in%20the%20Enterprise%20Plan" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+                </a>
+                <a href="YOUR_DISCORD_LINK" class="btn btn-discord">
+                    <i class="fab fa-discord"></i> Pay via Discord
+                </a>
             </div>
         </div>
     </div>
+
+    <!-- Script included to handle animations -->
     <script src="main.js"></script>
 </body>
 </html>
